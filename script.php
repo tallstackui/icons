@@ -1,17 +1,22 @@
 <?php
 
+/**
+ * This script is used to convert all SVG files in a folder to
+ * Blade components. Read the README.md file for more information.
+ * @author AJ Meireles
+ */
+
 require __DIR__ . '/vendor/autoload.php';
 
 Dotenv\Dotenv::createImmutable(__DIR__)->safeLoad();
 
-if ($_ENV['FOLDER'] === '') {
+if (($folder = $_ENV['FOLDER']) === '') {
     echo "The main folder is not set in the .env file.";
 
     exit;
 }
 
-$folder = $_ENV['FOLDER'];
-$main = __DIR__.'/'.$folder; // change the PATH to the folder where the SVG files are located
+$main = __DIR__.'/'.$folder;
 
 if (!is_dir($main)) {
     echo "The main folder [$folder] does not exist!";
