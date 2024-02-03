@@ -3,3 +3,4 @@
 .vscode
 /vendor/
 .env
+**/__MACOSX
