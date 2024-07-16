@@ -8,20 +8,23 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-Dotenv\Dotenv::createImmutable(__DIR__)->safeLoad();
+function output(string $message, bool $die = true)
+{
+    echo "\n" . $message . "\n" . PHP_EOL;
 
-if (($folder = $_ENV['FOLDER']) === '') {
-    echo "The main folder is not set in the .env file.";
+    if ($die) {
+        exit;
+    }
+}
 
-    exit;
+if (($folder = $_SERVER['argv'][1]) === '') {
+    output("You must specific the folder name.");
 }
 
 $main = __DIR__.'/'.$folder;
 
 if (!is_dir($main)) {
-    echo "The main folder [$folder] does not exist!";
-
-    exit;
+    output("The folder [$folder] does not exist!");
 }
 
 $folders = array_filter(scandir($main), fn ($item) => is_dir($main . '/' . $item) && !in_array($item, ['.', '..']));
@@ -48,4 +51,4 @@ foreach ($folders as $sub) {
     }
 }
 
-echo "\nDone!\n" . PHP_EOL;
+output("Done!");

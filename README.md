@@ -17,26 +17,12 @@ This repository aims to store all icons used in TallStackUI.
 
 This is the instructions to add new icons:
 
-1. Create a folder with the name of the vendor of the icon
+1. Create a folder with the name of the vendor/types of the icon
 
-2. Run this command:
-
-```bash
-composer install
-```
-
-3. Run this command to create the `.env` file:
+2. Run this command to generate the icons:
 
 ```bash
-cp .env.example .env
-```
-
-4. Edit the `.env` file inserting the name of the folder which contains the icons in svg format.
-
-5. Run this command to generate the icons:
-
-```bash
-php script.php
+php script.php folder_name_goes_here
 ```
 
 ---
