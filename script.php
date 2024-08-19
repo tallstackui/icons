@@ -40,7 +40,7 @@ foreach ($folders as $sub) {
         $filepath = $folder . '/' . $file;
         $content = file_get_contents($filepath);
         
-        $modifiedContents = preg_replace('/<svg(.*?)>/', '<svg {{ $attributes }}$1>', $content);
+        $modifiedContents = preg_replace('/<svg(.*?)>/s', '<svg {{ $attributes }}$1>', $content);
         
         $name = pathinfo($file, PATHINFO_FILENAME) . '.blade.php';
         $path = $folder . '/' . $name;
