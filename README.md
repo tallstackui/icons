@@ -9,6 +9,8 @@
     <a href="https://livewire.laravel.com"><img alt="Livewire v3.x" src="https://img.shields.io/badge/Livewire-^v3.x-FB70A9?style=for-the-badge"></a>
 </p>
 
+> Since TallStackUI version 2.0 changed the way custom icons are used, this repository has become read-only, just to maintain support for those still using TallStackUI version 1.0.
+
 ## Icon Repository
 
 This repository aims to store all icons used in TallStackUI. 
